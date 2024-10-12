@@ -1,36 +1,92 @@
 # Library
-add_library(new_cpp_project
-  project.h
-  project.cc
+add_library(jfml
+  flutter/fml/ascii_trie.cc
+  flutter/fml/ascii_trie.h
+  flutter/fml/backtrace.h
+  flutter/fml/base32.cc
+  flutter/fml/base32.h
+  flutter/fml/build_config.h
+  flutter/fml/closure.h
+  flutter/fml/concurrent_message_loop.cc
+  flutter/fml/concurrent_message_loop.h
+  flutter/fml/container.h
+  flutter/fml/cpu_affinity.cc
+  flutter/fml/cpu_affinity.h
+  flutter/fml/delayed_task.cc
+  flutter/fml/delayed_task.h
+  flutter/fml/eintr_wrapper.h
+  flutter/fml/endianness.cc
+  flutter/fml/endianness.h
+  flutter/fml/file.cc
+  flutter/fml/file.h
+  flutter/fml/hash_combine.h
+  flutter/fml/hex_codec.cc
+  flutter/fml/hex_codec.h
+  flutter/fml/log_level.h
+  flutter/fml/log_settings.cc
+  flutter/fml/log_settings.h
+  flutter/fml/log_settings_state.cc
+  flutter/fml/logging.cc
+  flutter/fml/logging.h
+  flutter/fml/make_copyable.h
+  flutter/fml/mapping.cc
+  flutter/fml/mapping.h
+  flutter/fml/math.h
+  flutter/fml/memory/ref_counted.h
+  flutter/fml/memory/ref_counted_internal.h
+  flutter/fml/memory/ref_ptr.h
+  flutter/fml/memory/ref_ptr_internal.h
+  flutter/fml/memory/task_runner_checker.cc
+  flutter/fml/memory/task_runner_checker.h
+  flutter/fml/memory/thread_checker.cc
+  flutter/fml/memory/thread_checker.h
+  flutter/fml/memory/weak_ptr.h
+  flutter/fml/memory/weak_ptr_internal.cc
+  flutter/fml/memory/weak_ptr_internal.h
+  flutter/fml/message_loop.cc
+  flutter/fml/message_loop.h
+  flutter/fml/message_loop_impl.cc
+  flutter/fml/message_loop_impl.h
+  flutter/fml/message_loop_task_queues.cc
+  flutter/fml/message_loop_task_queues.h
+  flutter/fml/native_library.h
+  flutter/fml/paths.cc
+  flutter/fml/paths.h
+  flutter/fml/posix_wrappers.h
+  flutter/fml/process.h
+  flutter/fml/raster_thread_merger.cc
+  flutter/fml/raster_thread_merger.h
+  flutter/fml/shared_thread_merger.cc
+  flutter/fml/shared_thread_merger.h
+  flutter/fml/status.h
+  flutter/fml/status_or.h
+  flutter/fml/synchronization/atomic_object.h
+  flutter/fml/synchronization/count_down_latch.cc
+  flutter/fml/synchronization/count_down_latch.h
+  flutter/fml/synchronization/semaphore.cc
+  flutter/fml/synchronization/semaphore.h
+  flutter/fml/synchronization/sync_switch.cc
+  flutter/fml/synchronization/sync_switch.h
+  flutter/fml/synchronization/waitable_event.cc
+  flutter/fml/synchronization/waitable_event.h
+  flutter/fml/task_queue_id.h
+  flutter/fml/task_runner.cc
+  flutter/fml/task_runner.h
+  flutter/fml/task_source.cc
+  flutter/fml/task_source.h
+  flutter/fml/thread.cc
+  flutter/fml/thread.h
+  flutter/fml/time/time_delta.h
+  flutter/fml/time/time_point.cc
+  flutter/fml/time/time_point.h
+  flutter/fml/time/timestamp_provider.h
+  flutter/fml/unique_fd.cc
+  flutter/fml/unique_fd.h
+  flutter/fml/unique_object.h
+  flutter/fml/wakeable.h
 )
 
-# Configure Fixtures Location
-get_filename_component(TEST_ASSETS_LOCATION ../assets ABSOLUTE)
-configure_file(fixtures_location.h.in fixtures_location.h @ONLY)
-
-# Unittests
-add_executable(new_cpp_project_tests
-  unittests.cc
-)
-target_link_libraries(new_cpp_project_tests
-  new_cpp_project
-  gtest_main
-)
-target_include_directories(new_cpp_project_tests
-  PUBLIC
-    ${CMAKE_CURRENT_BINARY_DIR}
-)
-gtest_discover_tests(new_cpp_project_tests)
-
-# Benchmarks
-add_executable(new_cpp_project_benchmarks
-  benchmarks.cc
-)
-target_link_libraries(new_cpp_project_benchmarks
-  new_cpp_project
-  benchmark::benchmark
-)
-target_include_directories(new_cpp_project_benchmarks
-  PUBLIC
-    ${CMAKE_CURRENT_BINARY_DIR}
+target_include_directories(jfml PUBLIC
+  .
+  "flutter"
 )
