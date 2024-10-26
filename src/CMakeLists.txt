@@ -86,7 +86,48 @@ add_library(jfml
   flutter/fml/wakeable.h
 )
 
+if(UNIX)
+target_sources(jfml PUBLIC
+  flutter/fml/platform/posix/command_line_posix.cc
+  flutter/fml/platform/posix/file_posix.cc
+  flutter/fml/platform/posix/mapping_posix.cc
+  flutter/fml/platform/posix/native_library_posix.cc
+  flutter/fml/platform/posix/paths_posix.cc
+  flutter/fml/platform/posix/posix_wrappers_posix.cc
+  flutter/fml/platform/posix/process_posix.cc
+)
+
+endif(UNIX)
+target_sources(jfml PUBLIC
+  flutter/fml/platform/darwin/cf_utils.cc
+  flutter/fml/platform/darwin/cf_utils.h
+  flutter/fml/platform/darwin/message_loop_darwin.h
+  flutter/fml/platform/darwin/message_loop_darwin.mm
+  flutter/fml/platform/darwin/paths_darwin.mm
+  flutter/fml/platform/darwin/platform_version.h
+  flutter/fml/platform/darwin/platform_version.mm
+  flutter/fml/platform/darwin/scoped_block.h
+  flutter/fml/platform/darwin/scoped_block.mm
+  flutter/fml/platform/darwin/scoped_nsautorelease_pool.cc
+  flutter/fml/platform/darwin/scoped_nsautorelease_pool.h
+  flutter/fml/platform/darwin/scoped_nsobject.h
+  flutter/fml/platform/darwin/scoped_nsobject.mm
+  flutter/fml/platform/darwin/scoped_policy.h
+  flutter/fml/platform/darwin/scoped_typeref.h
+  flutter/fml/platform/darwin/string_range_sanitization.h
+  flutter/fml/platform/darwin/string_range_sanitization.mm
+  flutter/fml/platform/darwin/weak_nsobject.h
+  flutter/fml/platform/darwin/weak_nsobject.mm
+)
+if(APPLE)
+
+endif(APPLE)
+
 target_include_directories(jfml PUBLIC
   .
   "flutter"
 )
+
+if(APPLE)
+target_link_libraries(jfml PUBLIC "-framework Foundation")
+endif(APPLE)
