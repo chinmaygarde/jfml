@@ -9,6 +9,7 @@ add_library(jfml
   flutter/fml/closure.h
   flutter/fml/concurrent_message_loop.cc
   flutter/fml/concurrent_message_loop.h
+  flutter/fml/concurrent_message_loop_factory.cc
   flutter/fml/container.h
   flutter/fml/cpu_affinity.cc
   flutter/fml/cpu_affinity.h
@@ -96,8 +97,9 @@ target_sources(jfml PUBLIC
   flutter/fml/platform/posix/posix_wrappers_posix.cc
   flutter/fml/platform/posix/process_posix.cc
 )
-
 endif(UNIX)
+
+if(APPLE)
 target_sources(jfml PUBLIC
   flutter/fml/platform/darwin/cf_utils.cc
   flutter/fml/platform/darwin/cf_utils.h
@@ -119,8 +121,6 @@ target_sources(jfml PUBLIC
   flutter/fml/platform/darwin/weak_nsobject.h
   flutter/fml/platform/darwin/weak_nsobject.mm
 )
-if(APPLE)
-
 endif(APPLE)
 
 target_include_directories(jfml PUBLIC
