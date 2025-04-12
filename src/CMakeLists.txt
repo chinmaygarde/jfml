@@ -7,6 +7,7 @@ add_library(jfml
   flutter/fml/base32.h
   flutter/fml/build_config.h
   flutter/fml/closure.h
+  flutter/fml/command_line.cc
   flutter/fml/concurrent_message_loop.cc
   flutter/fml/concurrent_message_loop.h
   flutter/fml/concurrent_message_loop_factory.cc
