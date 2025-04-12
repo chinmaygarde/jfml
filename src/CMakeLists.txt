@@ -113,14 +113,10 @@ target_sources(jfml PUBLIC
   flutter/fml/platform/darwin/scoped_block.mm
   flutter/fml/platform/darwin/scoped_nsautorelease_pool.cc
   flutter/fml/platform/darwin/scoped_nsautorelease_pool.h
-  flutter/fml/platform/darwin/scoped_nsobject.h
-  flutter/fml/platform/darwin/scoped_nsobject.mm
   flutter/fml/platform/darwin/scoped_policy.h
   flutter/fml/platform/darwin/scoped_typeref.h
   flutter/fml/platform/darwin/string_range_sanitization.h
   flutter/fml/platform/darwin/string_range_sanitization.mm
-  flutter/fml/platform/darwin/weak_nsobject.h
-  flutter/fml/platform/darwin/weak_nsobject.mm
 )
 endif(APPLE)
 
