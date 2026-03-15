@@ -1,5 +1,7 @@
 # JFML — Just FML
 
+[![CI](https://github.com/chinmaygarde/jfml/actions/workflows/ci.yml/badge.svg)](https://github.com/chinmaygarde/jfml/actions/workflows/ci.yml)
+
 A standalone C++ foundational library, forked from [Flutter Engine's FML](https://github.com/flutter/engine/tree/main/fml) with extraneous dependencies removed for easier embedding in other projects.
 
 ## Overview
