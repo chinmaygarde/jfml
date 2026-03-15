@@ -1,0 +1,16 @@
+{
+  "name": "jfml",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
+  "mounts": [
+    "target=${containerWorkspaceFolder}/build,type=volume"
+  ],
+  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y ninja-build && curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | sudo bash -s -- --to /usr/local/bin && sudo chown vscode:vscode ${containerWorkspaceFolder}/build && just sync",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools"
+      ]
+    }
+  }
+}

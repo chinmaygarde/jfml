@@ -100,6 +100,16 @@ target_sources(jfml PUBLIC
 )
 endif(UNIX)
 
+if(LINUX)
+target_sources(jfml PUBLIC
+  flutter/fml/platform/linux/message_loop_linux.cc
+  flutter/fml/platform/linux/message_loop_linux.h
+  flutter/fml/platform/linux/paths_linux.cc
+  flutter/fml/platform/linux/timerfd.cc
+  flutter/fml/platform/linux/timerfd.h
+)
+endif(LINUX)
+
 if(APPLE)
 target_sources(jfml PUBLIC
   flutter/fml/platform/darwin/cf_utils.cc

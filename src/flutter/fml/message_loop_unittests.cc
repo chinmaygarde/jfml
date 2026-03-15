@@ -82,7 +82,7 @@ TEST(MessageLoop, NonDelayedTasksAreRunInOrder) {
     auto& loop = fml::MessageLoop::GetCurrent();
     size_t current = 0;
     for (size_t i = 0; i < count; i++) {
-      loop.GetTaskRunner()->PostTask([&terminated, i, &current]() {
+      loop.GetTaskRunner()->PostTask([&terminated, i, &current, count]() {
         ASSERT_EQ(current, i);
         current++;
         if (count == i + 1) {
@@ -112,7 +112,7 @@ TEST(MessageLoop, DelayedTasksAtSameTimeAreRunInOrder) {
         fml::ChronoTicksSinceEpoch() + fml::TimeDelta::FromMilliseconds(2);
     for (size_t i = 0; i < count; i++) {
       loop.GetTaskRunner()->PostTaskForTime(
-          [&terminated, i, &current]() {
+          [&terminated, i, &current, count]() {
             ASSERT_EQ(current, i);
             current++;
             if (count == i + 1) {

@@ -16,3 +16,6 @@ clean:
 
 sync:
     git submodule update --init --recursive -j 8
+
+test-devcontainer:
+    devcontainer exec --workspace-folder . just test

@@ -14,6 +14,7 @@ project(jfml)
 option(JFML_BUILD_TESTING "Build jfml unit tests" OFF)
 
 if(JFML_BUILD_TESTING)
+  enable_testing()
   include(FetchContent)
   FetchContent_Declare(
     googletest
