@@ -1,6 +1,6 @@
 # JFML — Just FML
 
-A standalone C++ foundational library, forked from [Flutter Engine's FML](https://github.com/flutter/engine/tree/main/fml) (Fuchsia Media Library) with extraneous dependencies removed for easier embedding in other projects.
+A standalone C++ foundational library, forked from [Flutter Engine's FML](https://github.com/flutter/engine/tree/main/fml) with extraneous dependencies removed for easier embedding in other projects.
 
 ## Overview
 
