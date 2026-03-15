@@ -128,3 +128,48 @@ target_include_directories(jfml PUBLIC
 if(APPLE)
 target_link_libraries(jfml PUBLIC "-framework Foundation")
 endif(APPLE)
+
+if(JFML_BUILD_TESTING)
+  add_executable(jfml_unittests
+    flutter/fml/ascii_trie_unittests.cc
+    flutter/fml/backtrace_stub.cc
+    flutter/fml/backtrace_unittests.cc
+    flutter/fml/base32_unittest.cc
+    flutter/fml/closure_unittests.cc
+    flutter/fml/command_line_unittest.cc
+    flutter/fml/container_unittests.cc
+    flutter/fml/cpu_affinity_unittests.cc
+    flutter/fml/endianness_unittests.cc
+    flutter/fml/file_unittest.cc
+    flutter/fml/hash_combine_unittests.cc
+    flutter/fml/hex_codec_unittest.cc
+    flutter/fml/logging_unittests.cc
+    flutter/fml/mapping_unittests.cc
+    flutter/fml/math_unittests.cc
+    flutter/fml/memory/ref_counted_unittest.cc
+    flutter/fml/memory/task_runner_checker_unittest.cc
+    flutter/fml/memory/weak_ptr_unittest.cc
+    flutter/fml/message_loop_task_queues_merge_unmerge_unittests.cc
+    flutter/fml/message_loop_task_queues_unittests.cc
+    flutter/fml/message_loop_unittests.cc
+    flutter/fml/paths_unittests.cc
+    flutter/fml/raster_thread_merger_unittests.cc
+    flutter/fml/string_conversion.cc
+    flutter/fml/string_conversion_unittests.cc
+    flutter/fml/synchronization/count_down_latch_unittests.cc
+    flutter/fml/synchronization/semaphore_unittest.cc
+    flutter/fml/synchronization/sync_switch_unittest.cc
+    flutter/fml/synchronization/waitable_event_unittest.cc
+    flutter/fml/task_source_unittests.cc
+    flutter/fml/thread_unittests.cc
+    flutter/fml/time/chrono_timestamp_provider.cc
+    flutter/fml/time/time_delta_unittest.cc
+    flutter/fml/time/time_point_unittest.cc
+    flutter/fml/time/time_unittest.cc
+  )
+
+  target_link_libraries(jfml_unittests PRIVATE jfml GTest::gtest_main)
+
+  include(GoogleTest)
+  gtest_discover_tests(jfml_unittests)
+endif()
