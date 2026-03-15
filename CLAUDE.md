@@ -10,20 +10,20 @@ JFML (Just FML) is a standalone C++ foundational library forked from Flutter Eng
 
 ```bash
 # First-time setup: initialize git submodules
-make sync
+just sync
 
 # Build
-make build
+just build
 
 # Clean
-make clean
+just clean
 
 # Equivalent CMake commands:
 cmake -G Ninja -B build
 cmake --build build
 ```
 
-Requires CMake 3.22+ and Ninja. The only external dependency is the `third_party/cmake_toolbox` git submodule.
+Requires CMake 3.22+, Ninja, and `just`. The only external dependency is the `third_party/cmake_toolbox` git submodule.
 
 ## Code Formatting
 
