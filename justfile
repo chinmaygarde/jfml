@@ -6,7 +6,10 @@ build: build/build.ninja
 
 build/build.ninja:
     mkdir -p build
-    cmake -G Ninja -B build
+    cmake -G Ninja -B build -DJFML_BUILD_TESTING=ON
+
+test: build
+    ctest --test-dir build --output-on-failure
 
 clean:
     rm -rf build
